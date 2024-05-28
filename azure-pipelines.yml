@@ -18,3 +18,20 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: CodeScanCloudPrepare@1
+  inputs:
+    CodeScanCloud: 't-app'
+    organization: 'ts'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'loke'
+    cliProjectName: 'apex-examples'
+    cliSources: '.'
+    
+- task: CodeScanCloudAnalyze@1
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
+- task: CodeScanCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'

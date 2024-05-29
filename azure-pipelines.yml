@@ -20,12 +20,11 @@ steps:
 
 - task: CodeScanCloudPrepare@1
   inputs:
-    CodeScanCloud: 't-app'
+    CodeScanCloud: 't-preview'
     organization: 'ts'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'loke'
-    cliProjectName: 'apex-examples'
+    cliProjectKey: 'lokples'
     cliSources: '.'
     
 - task: CodeScanCloudAnalyze@1
